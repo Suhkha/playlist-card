@@ -23,19 +23,20 @@ $(document).ready(function(){
 		currentItemPlay.next(".card__track--timeline").toggleClass('card__track--active');
 	});
 
-	$('.card__playlist').scrollbox({
-	  linear: true,
-	  delay: 0,
-	  speed: 60,
-	  autoPlay: false,
-	  onMouseOverPause: false
-	});
+	$(function () {
+		$('.card__playlist').scrollbox({
+		  linear: true,
+		  delay: 0,
+		  speed: 60,
+		  autoPlay: false,
+		  onMouseOverPause: false
+		});
 
-	$('#flow_data').mouseover (function () {
-		console.log('si');
-	  $('.card__playlist').trigger('forwardHover');
-		}).mouseout(function() {
-		  $('.card__playlist').trigger('pauseHover');
+		$('#flow_data').mouseover (function () {
+			console.log('si');
+		  $('.card__playlist').trigger('forwardHover');
+			}).mouseout(function() {
+			  $('.card__playlist').trigger('pauseHover');
+		});
 	});
-
 });

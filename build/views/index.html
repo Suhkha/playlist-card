@@ -35,27 +35,28 @@
 					{{/platforms}}
 				</div>
 			</div>
-			<div class="card__playlist col-md-6 col-xs-12">
+			<div class="card__playlist scroll-text col-md-6 col-xs-12">
 				<!--template-->
-					
-						{{#tracks}}
-							<div class="card__track">
-								<div class="card__track--play">
-									<i class="fa fa-play" aria-hidden="true"></i>
-								</div>
-								<div class="card__track--timeline"></div>
-								<span class="card__track--title">{{title}}</span>
-								<span class="card__track--time">{{time}}</span>
-								<span class="card__track--album">The Beatles</span>
-							</div>
-						{{/tracks}}
-						
+						<ul>
+							{{#tracks}}
+								<li class="card__track">
+									<div class="card__track--play">
+										<i class="fa fa-play" aria-hidden="true"></i>
+									</div>
+									<div class="card__track--timeline"></div>
+									<span class="card__track--title">{{title}}</span>
+									<span class="card__track--time">{{time}}</span>
+									<span class="card__track--album">The Beatles</span>
+								</li>
+							{{/tracks}}
+						</ul>
 				</div>
 				
 				
 			{{/data}}
 		</script>
-				<!-- end template --><button class="btn" id="flow_data">hey scroll me</button>
+				<!-- end template -->
+		<button class="btn" id="flow_data">hey scroll me</button>
 	</main>
 	<script src="../scripts/vendor.min.js"></script>
 	<script src="../scripts/main.js"></script>
