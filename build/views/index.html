@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../styles/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+	<main class="container card">
+	<script id="track-template" type="text/x-handlebars-template">
+		{{#data}}
+			<div class="card__album col-md-6 col-xs-12">
+				<div class="card__album--cover">
+					<img src="../images/album--thumbnail.jpg" class="img-responsive preview" alt="">
+					<img src="../images/album--disc.png" class="disc" alt="">
+				</div>
+				<span class="card__album--title">{{album}}</span>
+				<span class="card__album--artist">by {{artist}} ({{year}})</span>
+				<span class="card__album--description">{{description}}</span>
+
+				<div class="card__album--available-in">
+					{{#platforms}}
+						<a href="{{itunes}}" target="_blank" class="platform__icon">
+							<i class="fa fa-apple" aria-hidden="true"></i>
+						</a>
+						<a href="{{spotify}}" target="_blank" class="platform__icon">
+							<i class="fa fa-spotify" aria-hidden="true"></i>
+						</a>
+						<a href="{{amazon}}" target="_blank" class="platform__icon">
+							<i class="fa fa-amazon" aria-hidden="true"></i>
+						</a>
+					{{/platforms}}
+				</div>
+			</div>
+			<div class="card__playlist col-md-6 col-xs-12">
+				<!--template-->
+					
+						{{#tracks}}
+							<div class="card__track">
+								<div class="card__track--play">
+									<i class="fa fa-play" aria-hidden="true"></i>
+								</div>
+								<div class="card__track--timeline"></div>
+								<span class="card__track--title">{{title}}</span>
+								<span class="card__track--time">{{time}}</span>
+								<span class="card__track--album">The Beatles</span>
+							</div>
+						{{/tracks}}
+						
+				</div>
+				
+				
+			{{/data}}
+		</script>
+				<!-- end template --><button class="btn" id="flow_data">hey scroll me</button>
+	</main>
+	<script src="../scripts/vendor.min.js"></script>
+	<script src="../scripts/main.js"></script>
+	<script src="https://use.fontawesome.com/be7e763425.js"></script>
+</body>
+</html>

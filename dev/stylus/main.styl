@@ -1,0 +1,93 @@
+$yellow = #FFD701
+$white = #FFFFFF
+$gray = #C0C0C0
+$black = #000000
+
+body
+	background $yellow
+	font-family 'Ubuntu', sans-serif
+
+.container
+	background $white
+	margin 100px auto
+	
+.card
+	position relative
+	padding 30px
+	&__album
+		position relative
+		margin 50px 0
+		display block
+		float left
+		&--cover
+			.preview
+				width 110px
+				height 110px
+			.disc
+				position absolute
+				top 0
+				left 66px
+				clip rect(0 51px 111px 0)
+				transform rotate(180deg)
+		&--title
+			color $black
+			font-weight 700
+		&--artist
+			color $gray
+			font-weight 300
+		&--description, &--artist, &--title
+			display block
+		&--available-in
+			margin-top 20px
+			display block
+			.platform__icon
+				margin-right 10px
+				background $white
+				color $black
+				padding 5px
+				border-radius 20px
+				border solid 2px $black
+				text-decoration none
+				text-align center
+				&:hover
+					background $black
+					color $white
+	&__playlist
+		@extend .card__album
+		height 330px
+		overflow hidden
+		.card__track
+			margin-bottom 15px
+			&--play
+				float left
+				margin-right 15px
+				padding 10px 0 0 0
+				cursor pointer
+				.fa-play
+					padding 10px
+					background $white
+					color $black
+					border solid 1px $black
+				.fa-pause
+					padding 10px
+					background $yellow
+					color $white
+					border solid 1px $yellow
+			&--timeline
+				margin-left 0px;
+				padding 10px 0 0 0
+				border-top solid 2px $gray
+			&--active
+				border-color $yellow
+				margin-left 40px;
+			&--title, &--time
+				display inline-block
+				@extend .card__album--title
+			&--time
+				float right
+			&--album
+				display block
+				@extend .card__album--artist
+			
+				
+				

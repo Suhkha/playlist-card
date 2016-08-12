@@ -1,0 +1,73 @@
+{
+	"data" :{
+			"album": "Beatles For Sale",
+			"artist": "The Beatles",
+			"year": 1964,
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, aut dolore quasi quae praesentium maxime pariatur!",
+			"platforms": [
+				{
+					"itunes": "https://itunes.apple.com/mx/artist/the-beatles/id136975",
+					"spotify": "https://open.spotify.com/special/thebeatles",
+					"amazon": "https://www.amazon.com/The-Beatles/e/B000APTK6K"
+				}
+			],
+			"tracks": [
+				{
+					"title": "Drive My Car",
+					"time": "2:29"
+				},
+				{
+					"title": "Norwegian Wood",
+					"time": "2:05"
+				},
+				{
+					"title": "You Won't See Me",
+					"time": "3:20"
+				},
+				{
+					"title": "Nowhere Man",
+					"time": "2:44"
+				},
+				{
+					"title": "Think For Yourself",
+					"time": "2:19"
+				},
+				{
+					"title": "The Word",
+					"time": "2:43"
+				},
+				{
+					"title": "Michelle",
+					"time": "2:42"
+				},
+				{
+					"title": "What Goes On",
+					"time": "2:49"
+				},
+				{
+					"title": "Girl",
+					"time": "2:32"
+				},
+				{
+					"title": "I'm Looking Through You",
+					"time": "2:26"
+				},
+				{
+					"title": "In My Life",
+					"time": "2:26"
+				},
+				{
+					"title": "Wait",
+					"time": "2:15"
+				},
+				{
+					"title": "If I Needed Someone",
+					"time": "2:22"
+				},
+				{
+					"title": "Run For Your Life",
+					"time": "2:21"
+				}
+			]
+		}
+	}
