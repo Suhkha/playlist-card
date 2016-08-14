@@ -10,53 +10,47 @@
 </head>
 <body>
 	<main class="container card">
-	<script id="track-template" type="text/x-handlebars-template">
-		{{#data}}
+		
 			<div class="card__album col-md-6 col-xs-12">
 				<div class="card__album--cover">
 					<img src="../images/album--thumbnail.jpg" class="img-responsive preview" alt="">
 					<img src="../images/album--disc.png" class="disc" alt="">
 				</div>
-				<span class="card__album--title">{{album}}</span>
-				<span class="card__album--artist">by {{artist}} ({{year}})</span>
-				<span class="card__album--description">{{description}}</span>
+				<span class="card__album--title">Beatles For Sale</span>
+				<span class="card__album--artist">by The Beatles (1964)</span>
+				<span class="card__album--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui in nihil praesentium tempore maiores eos perferendis ad molestiae odio facilis delectus, saepe ut. Eveniet vel rem nisi distinctio repellat, sint.</span>
 
 				<div class="card__album--available-in">
-					{{#platforms}}
-						<a href="{{itunes}}" target="_blank" class="platform__icon">
-							<i class="fa fa-apple" aria-hidden="true"></i>
-						</a>
-						<a href="{{spotify}}" target="_blank" class="platform__icon">
-							<i class="fa fa-spotify" aria-hidden="true"></i>
-						</a>
-						<a href="{{amazon}}" target="_blank" class="platform__icon">
-							<i class="fa fa-amazon" aria-hidden="true"></i>
-						</a>
-					{{/platforms}}
+				
+					<a href="https://itunes.apple.com/mx/artist/the-beatles/id136975" target="_blank" class="platform__icon">
+						<i class="fa fa-apple" aria-hidden="true"></i>
+					</a>
+					<a href="https://open.spotify.com/special/thebeatles" target="_blank" class="platform__icon">
+						<i class="fa fa-spotify" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.amazon.com/The-Beatles/e/B000APTK6K" target="_blank" class="platform__icon">
+						<i class="fa fa-amazon" aria-hidden="true"></i>
+					</a>
 				</div>
 			</div>
 			<div class="card__playlist scroll-text col-md-6 col-xs-12">
-				<!--template-->
-						<ul>
-							{{#tracks}}
-								<li class="card__track">
-									<div class="card__track--play">
-										<i class="fa fa-play" aria-hidden="true"></i>
-									</div>
-									<div class="card__track--timeline"></div>
-									<span class="card__track--title">{{title}}</span>
-									<span class="card__track--time">{{time}}</span>
-									<span class="card__track--album">The Beatles</span>
-								</li>
-							{{/tracks}}
-						</ul>
-				</div>
-				
-				
-			{{/data}}
-		</script>
-				<!-- end template -->
-		<button class="btn" id="flow_data">hey scroll me</button>
+			<script id="track-template" type="text/x-handlebars-template">
+			<ul>
+				{{#items}}	
+					<li class="card__track">
+						<div class="card__track--play" src="{{this.preview_url}}">
+							<i class="fa fa-play" aria-hidden="true"></i>
+						</div>
+						<div class="card__track--timeline"></div>
+						<span class="card__track--title">{{nameSong name}}</span>
+						<span class="card__track--time">{{timeSong duration_ms}}</span>
+						<span class="card__track--album">The Beatles</span>
+					</li>
+					{{/items}}
+				</ul>
+				</script>
+			</div>
+		
 	</main>
 	<script src="../scripts/vendor.min.js"></script>
 	<script src="../scripts/main.js"></script>

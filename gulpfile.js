@@ -1,13 +1,13 @@
 var gulp 			= require('gulp'),
 	nib 			= require('nib'),
 	stylus 			= require('gulp-stylus'),
-    autoprefixer 	= require('gulp-autoprefixer'),
-    minifyCSS 		= require('gulp-minify-css'),
-    jade 			= require('gulp-jade'),
-    uglify 			= require('gulp-uglify'),
-    rename 			= require('gulp-rename'),
-    concat 			= require('gulp-concat'),
-    connect  		= require('gulp-connect'); //Live-reload
+		autoprefixer 	= require('gulp-autoprefixer'),
+		minifyCSS 		= require('gulp-minify-css'),
+		jade 			= require('gulp-jade'),
+		uglify 			= require('gulp-uglify'),
+		rename 			= require('gulp-rename'),
+		concat 			= require('gulp-concat'),
+		connect  		= require('gulp-connect'); //Live-reload
 
 //manage tasks
 gulp.task('css', function(){
@@ -34,7 +34,8 @@ gulp.task('js', function(){
 		'bower_components/jquery/dist/jquery.js',
 		'bower_components/modernizr/modernizr.js',
 		'bower_components/handlebars/handlebars.js',
-		'bower_components/jquery-scrollbox/jquery.scrollbox.js'
+		'bower_components/jquery-scrollbox/jquery.scrollbox.js',
+		'bower_components/spotify-web-api-js/src/spotify-web-api.js'
 	])
 		.pipe(concat('vendor.min.js'))
 		.pipe(uglify())
@@ -45,10 +46,10 @@ gulp.task('js', function(){
 
 // Start Live reload server
 gulp.task('connect', function() {
-  connect.server({
-    root: 'build',
-    livereload: true,
-  });
+	connect.server({
+		root: 'build',
+		livereload: true,
+	});
 });
 
 

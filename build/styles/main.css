@@ -1,10 +1,11 @@
 body {
   background: #ffd701;
   font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
 }
 .container {
   background: #fff;
-  margin: 100px auto;
+  margin: 60px auto;
 }
 .card {
   position: relative;
@@ -78,10 +79,14 @@ body {
 }
 .card__playlist {
   height: 330px;
-  overflow: hidden;
+  overflow-y: scroll;
+}
+.card__playlist ul {
+  padding: 0;
 }
 .card__playlist .card__track {
   margin-bottom: 15px;
+  list-style-type: none;
 }
 .card__playlist .card__track--play {
   float: left;

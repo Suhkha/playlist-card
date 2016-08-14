@@ -6,10 +6,11 @@ $black = #000000
 body
 	background $yellow
 	font-family 'Ubuntu', sans-serif
+	font-size 12px
 
 .container
 	background $white
-	margin 100px auto
+	margin 60px auto
 	
 .card
 	position relative
@@ -55,9 +56,12 @@ body
 	&__playlist
 		@extend .card__album
 		height 330px
-		overflow hidden
+		overflow-y scroll
+		ul
+			padding 0
 		.card__track
 			margin-bottom 15px
+			list-style-type none
 			&--play
 				float left
 				margin-right 15px
