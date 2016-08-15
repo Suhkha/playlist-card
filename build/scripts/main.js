@@ -1,24 +1,47 @@
-	//Event delegate
+var cardTrackPlay,cardTrackPause,cardTrackActive,audio,play,endItem,activeItem,idItemPause,pause;
+
+
+function playSong(){
+	play = audioTag[0].play();
+	cardTrackPlay.hide();
+	cardTrackPause.show();
+	cardTrackActive.addClass('card__track--active');
+}
+
+	function endSong (){
+		pause = audioTag[0].pause();
+		cardTrackPause.hide();
+		cardTrackPlay.show();
+		activeItem.removeClass('card__track--active');
+	}
+
+
 	$(document).on("click", ".card__track--play", function(){
-		var itemPlay = $(".card__track--play");
-		var currentItemPlay = $(this);
+		cardTrackPlay = $(this); 
+		cardTrackPause = $(this).next(); 
 
-		itemPlay.find(".fa-play").removeClass('fa-pause');
-		itemPlay.next(".card__track--timeline").removeClass('card__track--active');
+		cardTrackActive = cardTrackPause.next(); 
+		audioTag = $(this).prev();
+		audioSrc = audioTag[0];
+		audioId = audioTag.attr("id");
 
-		currentItemPlay.find(".fa-play").toggleClass('fa-pause');
-		currentItemPlay.next(".card__track--timeline").toggleClass('card__track--active');
-
-		var pre = currentItemPlay.attr("src");
-		var audio = new Audio([pre]);
-		var  a = audio.paused;
-
-		var t = audio.play();
-		console.log(a);
-
-
+		
+		playSong();
+	
+		audioSrc.onended = function() {
+    	endSong();
+		};
 	});
 
+	$(document).on("click", ".card__track--pause", function(){
+		cardTrackPause = $(this);
+		cardTrackPlay = $(this).prev();
+
+		activeItem = cardTrackPause.next();
+		audioTag = cardTrackPlay.prev();
+
+		endSong();
+	});
 
 
 	//Spotify
@@ -27,7 +50,6 @@
 		if (err){
 			console.error(err);
 		}else{
-			console.log(data);
 			var source = $("#track-template").html();
 			var template = Handlebars.compile(source);
 
@@ -35,7 +57,8 @@
 				var timeSong = data['items'][i]['duration_ms'];
 				var nameSong = data['items'][i]['name'];
 				var preview = data['items'][i]['preview_url'];
-				
+				var track_number = data['items'][i]['track_number'];
+			
 			//MS to Min -- custom helper
 			Handlebars.registerHelper('timeSong', function(timeSong) {
 				
@@ -50,6 +73,7 @@
 				return finalNameSong;
 			});
 		}
+		
 		$('.card__playlist').append(template(data));
 	}
 });

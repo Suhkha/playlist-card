@@ -7,6 +7,9 @@ body {
   background: #fff;
   margin: 60px auto;
 }
+.hide {
+  display: none;
+}
 .card {
   position: relative;
   padding: 30px;
@@ -88,19 +91,22 @@ body {
   margin-bottom: 15px;
   list-style-type: none;
 }
-.card__playlist .card__track--play {
+.card__playlist .card__track--play,
+.card__playlist .card__track--pause {
   float: left;
   margin-right: 15px;
   padding: 10px 0 0 0;
   cursor: pointer;
 }
-.card__playlist .card__track--play .fa-play {
+.card__playlist .card__track--play .fa-play,
+.card__playlist .card__track--pause .fa-play {
   padding: 10px;
   background: #fff;
   color: #000;
   border: solid 1px #000;
 }
-.card__playlist .card__track--play .fa-pause {
+.card__playlist .card__track--play .fa-pause,
+.card__playlist .card__track--pause .fa-pause {
   padding: 10px;
   background: #ffd701;
   color: #fff;
